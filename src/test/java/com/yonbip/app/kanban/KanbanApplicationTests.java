@@ -1,4 +1,4 @@
-package com.youkeda.app.kanban;
+package com.yonbip.app.kanban;
 
 import com.youkeda.app.kanban.control.HelloControl;
 import org.assertj.core.api.Assertions;

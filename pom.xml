@@ -12,9 +12,9 @@
 	<artifactId>kanban</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kanban</name>
-	<description>实战－基于 Bootstrap 的任务看板</description>
+	<description>基于 Bootstrap 的任务看板</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
