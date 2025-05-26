@@ -1,13 +1,12 @@
 package com.yonbip.app.kanban;
 
 import com.yonbip.app.kanban.dao.UserDAO;
-import com.yonbip.app.kanban.dataobject.UserDO;
 import com.yonbip.app.kanban.model.Result;
 import com.yonbip.app.kanban.model.User;
 import com.yonbip.app.kanban.service.UserService;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.context.WebApplicationContext;
-
 import java.util.List;
 
 /**
@@ -66,8 +65,11 @@ public class KanbanApplication3Tests {
 
             Assert.assertTrue("调用 userService.register() 失败，返回 User 实例的 id 为 0", user.getId() > 0);
 
-            List<UserDO> users = userDAO.findAll();
-            Assert.assertNotNull("userDAO.findAll() 不能返回 null", users);
+            User user2 = userService.findByUserName("测试用户1");
+            Assert.assertNotNull("userService.findByUserName() 返回 null", user2);
+
+            List<User> users3 = userService.search("测试用户1", null, null);
+            Assert.assertNotNull("userService.search() 返回 null", !CollectionUtils.isEmpty(users3));
 
             userDAO.delete(user.getId());
 

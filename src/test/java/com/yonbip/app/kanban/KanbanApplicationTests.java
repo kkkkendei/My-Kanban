@@ -1,6 +1,6 @@
 package com.yonbip.app.kanban;
 
-import com.youkeda.app.kanban.control.HelloControl;
+import com.yonbip.app.kanban.control.HelloControl;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
@@ -64,9 +64,9 @@ class KanbanApplicationTests {
 	private void checkClass() throws Exception {
 		LOG.info("开始检查类是否存在：");
 		try {
-			Class sobjClass = Class.forName("com.youkeda.app.kanban.control.HelloControl");
+			Class sobjClass = Class.forName("com.yonbip.app.kanban.control.HelloControl");
 		} catch (ClassNotFoundException cnfe) {
-			LOG.error("缺少 com.youkeda.app.kanban.control.HelloControl");
+			LOG.error("缺少 com.yonbip.app.kanban.control.HelloControl");
 			throw cnfe;
 		}
 		LOG.info("检查完毕");

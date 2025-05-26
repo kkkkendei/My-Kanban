@@ -3,6 +3,9 @@ package com.yonbip.app.kanban.service;
 import com.yonbip.app.kanban.model.Result;
 import com.yonbip.app.kanban.model.User;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public interface UserService {
 
     /**
@@ -22,5 +25,11 @@ public interface UserService {
      * @return
      */
     public Result<User> login(String userName, String pwd);
+
+    public User findByUserName(String userName);
+
+    public List<User> findByIds(List<Long> ids);
+
+    public List<User> search(String keyWord, LocalDateTime startTime, LocalDateTime endTime);
 
 }
